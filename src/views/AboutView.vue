@@ -1,9 +1,9 @@
 <template>
   <div class="about">
     <div class="about" v-for="team in teams" :key="team">
-      <h2 v-show="teamId===team.id">curent team: {{team.name}}</h2>
+      <h2 v-show="teamId===team.id">current team: {{team.name}}</h2>
     </div>
-    <button @click="increse">counter</button>
+    <button @click="increase">counter</button>
     <p>{{ $store.state.sum }}</p>
     <p>Last team name clicked: {{ $store.state.lastTeam }}</p>
     <router-link to="/">戻る</router-link>
@@ -35,7 +35,7 @@ export default {
   methods: {
     increase() {
       this.$store.commit('incrementMutation');
-    }
+    },
   }
 };
 </script>

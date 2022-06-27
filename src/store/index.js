@@ -10,7 +10,10 @@ export default new Vuex.Store({
   },
   mutations: {
     incrementMutation(state) {
-      state.sum++
+      state.sum++ 
+    },
+    lastTeamUpdateMutation(state,payload) {
+      state.push(payload);
     }
   }
 })

@@ -31,11 +31,23 @@ export default {
       ],
     };
   },
+  teamName: {},
   props: ['teamId'],
   methods: {
     increase() {
       this.$store.commit('incrementMutation');
+      this.$store.commit('lastTeamUpdateMutation', this.teamName.name);
     },
+    getTeamName() {
+      this.teams.forEach((team) => {
+        if (team.id === this.teamId) {
+          this.teamName = team;
+        }
+      });
+    },
+  },
+  created() {
+    this.getTeamName();
   }
 };
 </script>

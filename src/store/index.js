@@ -13,7 +13,7 @@ export default new Vuex.Store({
       state.sum++ 
     },
     lastTeamUpdateMutation(state,payload) {
-      state.push(payload);
+      state.state.lastTeam(payload);
     }
   }
 })
